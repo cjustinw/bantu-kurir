@@ -29,6 +29,8 @@ body {
 }
 
 .Content {
+  position: relative;
+  display: flex;
   margin-top: 6rem;
   padding: 2rem 5rem;
   width: 100%;
