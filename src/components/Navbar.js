@@ -22,7 +22,7 @@ const Navbar = () => {
     <div className={color ? "navbar" : "navbar invert"}>
       <div className="nav-logo">
         <Link to="/">
-          <FaBox/> BantuKurir
+          <FaBox/> BantuKurir.id
         </Link>
       </div>
       <div className="nav-menu">
