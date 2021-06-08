@@ -7,7 +7,6 @@ const Navbar = () => {
   const [color, setColor] = useState(true);
 
   const changeNavColor = () => {
-    console.log(window.scroll());
     if(window.scrollY <= 45){
       setColor(true)
     }
@@ -18,20 +17,17 @@ const Navbar = () => {
 
   window.addEventListener('scroll', changeNavColor);
 
+
   return (
-    <div className={ color ? "navbar" : "navbar-invert"}>
+    <div className={color ? "navbar" : "navbar invert"}>
       <div className="nav-logo">
         <Link to="/">
           <FaBox/> BantuKurir
         </Link>
       </div>
       <div className="nav-menu">
-        <div className="nav-links">
-          <Link to="/input">Masukkan Tujuan</Link>
-        </div>
-        <div className="nav-links">
-          <Link to="/cari">Cari Jalur</Link>
-        </div>
+        <Link to="/input">Masukkan Lokasi</Link>
+        <Link to="/cari">Cari Jalur</Link>
       </div>
     </div>
   )

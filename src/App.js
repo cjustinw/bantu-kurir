@@ -2,6 +2,7 @@ import Navbar from './components/Navbar';
 import Home from './components/Home';
 import InputTujuan from './components/InputTujuan';
 import CariJalur from './components/CariJalur';
+import Footer from './components/Footer';
 import { Switch, Route } from 'react-router-dom';
 import './App.css';
 
@@ -15,8 +16,8 @@ function App() {
           <Route path="/input" component={InputTujuan}/>
           <Route path="/cari" component={CariJalur}/>
         </Switch>
-       
       </div>
+      <Footer/>
     </div>
     
   );

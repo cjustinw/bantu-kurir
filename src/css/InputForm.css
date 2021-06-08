@@ -4,7 +4,7 @@
   width: 40vw;
   min-width: 400px;
   display: flex;
-  height: 600px;
+  max-height: 600px;
   flex-direction: column;
   padding: 3rem 3rem;
   border-radius: 15px;
@@ -24,12 +24,18 @@
 }
 
 .input-btn {
-  height: 40px;
+  height: 45px;
   border-radius: 5px;
   border: none;
   margin-top: 1.2rem;
   background-color: rgb(182, 42, 42);
   color: rgb(226, 226, 226);
   cursor: pointer;
-  font-weight: 500;
+  font-weight: 400;
+  font-size: 17px;
+  transition: 0.3s;
+}
+
+.input-btn:hover {
+  transform: scale(1.05);
 }

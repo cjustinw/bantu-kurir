@@ -18,12 +18,19 @@ h1 {
 .navbar a {
   color: #ebebeb;
   cursor: pointer;
+  transition: 0.3s;
 }
 
 .navbar a:hover {
-  /* color: rgb(61, 61, 61); */
-  /* color: rgb(20, 152, 161); */
-  color: rgb(151, 138, 138);
+  transform: scale(1.1);
+}
+
+.invert {
+  background: linear-gradient(to bottom, rgb(190, 170, 170), transparent);
+}
+
+.invert a {
+  color: rgb(61, 61, 61);
 }
 
 .nav-logo,
@@ -33,12 +40,17 @@ h1 {
   padding: 0 1rem;
 }
 
-.nav-logo a {
-  font-size: larger;
-  font-weight: 500;
+.nav-menu a:hover {
+  transform: scale(1.1);
 }
 
-.nav-links {
+.nav-logo a {
+  font-size: 22px;
+  font-weight: 600;
+}
+
+.nav-menu a {
   padding-top: 0.2rem;
   padding-right: 2rem;
+  font-weight: 400;
 }
