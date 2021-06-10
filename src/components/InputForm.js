@@ -42,14 +42,14 @@ const InputForm = () => {
   return (
     <>
       {loading ? 
-        <>
+        <div className="status-input">
         {
           success ?
           <img id="Succ" src={Succ} alt="Succ" /> 
           :
           <img id="loading" src={Loading} alt="Succ" /> 
         }
-        </>
+        </div>
         : 
         <>
         {formState ? 
@@ -64,14 +64,3 @@ const InputForm = () => {
 }
 
 export default InputForm
-
-/*
-<label htmlFor="lokasi-asal" className="input-label">Nama Lokasi Asal</label>
-      <input id="lokasi-asal" type="text" name="lokasi-asal" value="" required />
-      <label htmlFor="koordinat-asal" className="input-label">Koordinat Asal</label>
-      <input id="koordinat-asal" type="text" name="koordinat-asal" value="" required/>
-      <label htmlFor="lokasi-tujuan" className="input-label">Nama Lokasi Tujuan</label>
-      <input id="lokasi-tujuan" type="text" name="lokasi-tujuan" value="" required/>
-      <label htmlFor="koordinat-tujuan" className="input-label">Koordinat Tujuan</label>
-      <input id="koordinat-tujuan" type="text" name="koordinat-tujuan" value="" required/>
-*/

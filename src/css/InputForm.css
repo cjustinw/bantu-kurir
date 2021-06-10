@@ -1,5 +1,4 @@
 .input-form {
-  background-color: rgb(196, 196, 196);
   max-width: 450px;
   width: 35vw;
   min-width: 400px;
@@ -8,6 +7,7 @@
   flex-direction: column;
   padding: 3rem 3rem;
   border-radius: 15px;
+  box-shadow: 6px 19px 23px 1px rgb(0 0 0 / 15%);
 }
 
 .input-form input {
@@ -34,6 +34,7 @@
   font-weight: 400;
   font-size: 17px;
   transition: 0.3s;
+  box-shadow: 6px 19px 23px 1px rgb(0 0 0 / 15%);
 }
 
 .input-btn:hover {
@@ -52,4 +53,14 @@
   max-height: 300px;
   margin-bottom: 2rem;
   padding: 2rem;
+}
+
+.status-input {
+  max-width: 450px;
+  width: 35vw;
+  min-width: 400px;
+  display: flex;
+  max-height: 550px;
+  justify-content: center;
+  align-items: center;
 }

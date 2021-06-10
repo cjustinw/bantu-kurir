@@ -7,17 +7,18 @@
 }
 
 .Home img {
-  min-width: 500px;
-  width: 45%;
+  /* min-width: 500px; */
+  max-height: 75vh;
+  /* width: 45%; */
 }
 
 img {
   transition: 0.3s;
 }
-
+/* 
 img:hover {
   transform: scale(1.04);
-}
+} */
 
 .Home-title {
   width: 40%;
@@ -49,6 +50,7 @@ img:hover {
   cursor: pointer;
   margin-bottom: 2rem;
   transition: 0.3s;
+  box-shadow: 6px 19px 23px 1px rgb(0 0 0 / 15%);
 }
 
 .Home-title button:hover {

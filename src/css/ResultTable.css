@@ -1,0 +1,47 @@
+.result-table {
+  background-color: rgb(182, 42, 42);
+  box-shadow: 6px 19px 23px 1px rgb(0 0 0 / 15%);
+  border-radius: 40px;
+  width: 70vw;
+  align-self: center;
+}
+
+.result-table h1 {
+  padding: 1.5rem 2rem 0;
+  font-size: 30px;
+  font-weight: 500;
+  color: rgb(216, 216, 216);
+}
+
+.result-data-kurir {
+  padding: 1.5rem;
+  color: rgb(216, 216, 216);
+  font-size: 17px;
+}
+
+.result-data-kurir td {
+  padding: 0.3rem 1rem 0.3rem 1rem;
+}
+
+.result-data-kurir-title {
+  font-weight: 500;
+}
+
+.result-data-lokasi {
+  padding: 1.5rem;
+  width: 100%;
+  border-radius: 40px;
+  background-color: rgb(216, 216, 216);
+  color: rgb(56, 56, 56);
+}
+
+thead {
+  text-align: left;
+}
+
+.result-data-lokasi td {
+  padding-top: 1rem;
+  padding-right: 1rem;
+  max-width: 15vw;
+  word-wrap: break-word;
+}

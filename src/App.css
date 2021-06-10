@@ -12,7 +12,8 @@ body {
 }
 
 h1,
-p {
+p,
+td {
   cursor: default;
 }
 

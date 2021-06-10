@@ -53,7 +53,7 @@ const InputFormKurir = ({updateDataKurir}) => {
         <input id="tanggal" type="date" name="tanggal" value={tanggal} required min={today} onChange={updateTanggal}/>
         <label htmlFor="kecepatan" className="input-label">Kecepatan Rata-Rata Kurir</label>
         <input id="kecepatan" type="text" name="kecepatan" value={kecepatan} required onChange={updateKecepatan}/>
-        <label htmlFor="Jumlah Lokasi" className="input-label">Jumlah Lokasi</label>
+        <label htmlFor="Jumlah-lokasi" className="input-label">Jumlah Lokasi</label>
         <input id="jumlah-lokasi" type="number" name="jumlah" value={jumlah} required min="2" onChange={updateJumlah}/>
         <button className="input-btn">Next</button>
       </form>

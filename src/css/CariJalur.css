@@ -1,0 +1,13 @@
+.CariJalur {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  width: 100%;
+  padding: 1rem;
+}
+
+.CariJalur img {
+  max-height: 55vh;
+  margin-bottom: 2rem;
+  padding: 2rem;
+}
