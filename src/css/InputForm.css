@@ -1,10 +1,10 @@
 .input-form {
   background-color: rgb(196, 196, 196);
-  max-width: 600px;
-  width: 40vw;
+  max-width: 450px;
+  width: 35vw;
   min-width: 400px;
   display: flex;
-  max-height: 600px;
+  max-height: 550px;
   flex-direction: column;
   padding: 3rem 3rem;
   border-radius: 15px;
@@ -27,7 +27,7 @@
   height: 45px;
   border-radius: 5px;
   border: none;
-  margin-top: 1.2rem;
+  margin-top: 1.3rem;
   background-color: rgb(182, 42, 42);
   color: rgb(226, 226, 226);
   cursor: pointer;
@@ -38,4 +38,18 @@
 
 .input-btn:hover {
   transform: scale(1.05);
+}
+
+.input-form h1 {
+  padding-bottom: 1.5rem;
+  color: rgb(56, 56, 56);
+  font-weight: 500;
+  font-size: 25px;
+}
+
+#Succ {
+  align-self: center;
+  max-height: 300px;
+  margin-bottom: 2rem;
+  padding: 2rem;
 }
