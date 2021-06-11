@@ -1,7 +1,7 @@
 import React from 'react'
 import '../css/ResultTable.css';
 
-const ResultTable = () => {
+const ResultTable = ({data}) => {
   return (
     <div className="result-table">
       <h1>Hasil Pencarian</h1>
@@ -9,23 +9,23 @@ const ResultTable = () => {
         <table>
           <tr>
             <td className="result-data-kurir-title">Nama Kurir </td>
-            <td>: William</td>
+            <td>: {data.dataKurir.nama}</td>
           </tr>
           <tr>
             <td className="result-data-kurir-title">Tanggal </td>
-            <td>: 21/06/2021</td>
+            <td>: {data.dataKurir.tanggal}</td>
           </tr>
           <tr>
             <td className="result-data-kurir-title">Kecepatan Rata-rata</td>
-            <td>: 23 km/jam</td>
+            <td>: {data.dataKurir.kecepatan} km/jam</td>
           </tr>
           <tr>
             <td className="result-data-kurir-title">Total Jarak </td>
-            <td>: 23 km</td>
+            <td>: {}</td>
           </tr>
           <tr>
             <td className="result-data-kurir-title">Estimasi Waktu </td>
-            <td>: 23 jam</td>
+            <td>: {}</td>
           </tr>
         </table>
       </div>
@@ -40,42 +40,14 @@ const ResultTable = () => {
           </tr>
         </thead>
         <tbody>
-          <tr>
-            <td>1</td>
-            <td>Institut Teknologi Bandung</td>
-            <td>-6.89316904262651</td>
-            <td>107.61041844446223</td>
-          </tr>
-          <tr>
-            <td>2</td>
-            <td>Institut Teknologi Bandung</td>
-            <td>-6.89316904262651</td>
-            <td>107.61041844446223</td>
-          </tr>
-          <tr>
-            <td>3</td>
-            <td>Institut Teknologi Bandung</td>
-            <td>-6.89316904262651</td>
-            <td>107.61041844446223</td>
-          </tr>
-          <tr>
-            <td>4</td>
-            <td>Institut Teknologi Bandung</td>
-            <td>-6.89316904262651</td>
-            <td>107.61041844446223</td>
-          </tr>
-          <tr>
-            <td>5</td>
-            <td>Institut Teknologi Bandung</td>
-            <td>-6.89316904262651</td>
-            <td>107.61041844446223</td>
-          </tr>
-          <tr>
-            <td>6</td>
-            <td>Institut Teknologi Bandung</td>
-            <td>-6.89316904262651</td>
-            <td>107.61041844446223</td>
-          </tr>
+          {data.dataLokasi.map((elmt, index) =>
+            <tr>
+              <td>{index+1}</td>
+              <td>{elmt.nama_lokasi}</td>
+              <td>{elmt.longitude}</td>
+              <td>{elmt.latitude}</td>
+            </tr>
+          )}
         </tbody>
     </table>
     </div>

@@ -45,3 +45,7 @@ thead {
   max-width: 15vw;
   word-wrap: break-word;
 }
+
+.not-found {
+  text-align: center;
+}

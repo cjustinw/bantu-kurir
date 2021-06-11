@@ -8,7 +8,8 @@
 
 .Home img {
   /* min-width: 500px; */
-  max-height: 75vh;
+  height: 75vh;
+  max-height: 600px;
   /* width: 45%; */
 }
 

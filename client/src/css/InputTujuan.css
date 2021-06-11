@@ -8,7 +8,8 @@
 }
 
 .InputTujuan img {
-  max-height: 55vh;
+  height: 60vh;
+  max-height: 400px;
   margin-bottom: 2rem;
   padding: 2rem;
 }

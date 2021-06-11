@@ -2,6 +2,7 @@ import React, {useState} from 'react';
 import '../css/InputForm.css';
 import Succ from '../images/success.svg';
 import Loading from '../images/loading.svg';
+import Failed from '../images/failed.svg';
 import InputFormKurir from './InputFormKurir';
 import InputFormLokasi from './InputFormLokasi';
 
@@ -11,6 +12,7 @@ const InputForm = () => {
   const [dataLokasi, setDataLokasi] = useState([]);
   const [number, setNumber] = useState(0);
   const [success, setSuccess] = useState(false);
+  const [failed, setFailed] = useState(false);
   const [loading, setLoading] = useState(false);
 
   const updateDataKurir = (newDataKurir) => {
@@ -24,19 +26,31 @@ const InputForm = () => {
     setNumber(number+1);
   }
 
-  const submitForm = () => {
+  const submitForm = async() => {
     setLoading(true);
-    setTimeout(() => {
-      setSuccess(true);
-    },2000);
-    setTimeout(() => {
-      setSuccess(false);
-      setLoading(false);
-    },4000);
-    setFormState(true);
-    setDataKurir("");
-    setDataLokasi([]);
-    setNumber(0);
+    const body = {dataKurir, dataLokasi};
+    fetch("/input", {
+      method: "POST",
+      headers: {"Content-Type": "application/json"},
+      body: JSON.stringify(body)
+    }).then(res => res.json())                     
+      .then(data => {
+        if(data.inputStatus){
+          setSuccess(true);
+        }
+        else{
+          setFailed(true);
+        }
+        setTimeout(() => {
+          setSuccess(false);
+          setFailed(false);
+          setLoading(false);
+        },2000);
+        setFormState(true);
+        setDataKurir("");
+        setDataLokasi([]);
+        setNumber(0);
+      }).catch(err => console.log(err));
   }
 
   return (
@@ -45,7 +59,10 @@ const InputForm = () => {
         <div className="status-input">
         {
           success ?
-          <img id="Succ" src={Succ} alt="Succ" /> 
+          <img id="succ" src={Succ} alt="Succ" /> 
+          :
+          failed ?
+          <img id="failed" src={Failed} alt="Succ" /> 
           :
           <img id="loading" src={Loading} alt="Succ" /> 
         }

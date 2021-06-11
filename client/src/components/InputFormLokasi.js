@@ -39,9 +39,9 @@ const InputFormLokasi = ({idx, jumlahLokasi, updateDataLokasi, submitForm}) => {
             <label htmlFor="nama-lokasi" className="input-label">Nama Lokasi {idx} {idx === 1 ? <>(Lokasi Asal)</> : <>(Lokasi Tujuan)</>}</label>
             <input id="nama-lokasi" type="text" name="lokasi" value={namaLokasi} required onChange={updateNamaLokasi}/>
             <label htmlFor="longitude" className="input-label">Longitude</label>
-            <input id="longitude" type="text" name="longitude" value={longitude} required onChange={updateLongitude}/>
+            <input id="longitude" type="number" name="longitude" step="any" value={longitude} required onChange={updateLongitude}/>
             <label htmlFor="latitude" className="input-label">Latitude</label>
-            <input id="latitude" type="text" name="latitude" value={latitude} required onChange={updateLatitude}/>
+            <input id="latitude" type="number" name="latitude" step="any" value={latitude} required onChange={updateLatitude}/>
           <button className="input-btn">Next</button>
           </>
         :
