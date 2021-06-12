@@ -9,19 +9,19 @@ const ResultTable = ({data}) => {
         <table>
           <tr>
             <td className="result-data-kurir-title">Nama Kurir </td>
-            <td>: {data.dataKurir.nama}</td>
+            <td>: {data.kurir.nama}</td>
           </tr>
           <tr>
             <td className="result-data-kurir-title">Tanggal </td>
-            <td>: {data.dataKurir.tanggal}</td>
+            <td>: {data.kurir.tanggal}</td>
           </tr>
           <tr>
             <td className="result-data-kurir-title">Kecepatan Rata-rata</td>
-            <td>: {data.dataKurir.kecepatan} km/jam</td>
+            <td>: {data.kurir.kecepatan} km/jam</td>
           </tr>
           <tr>
             <td className="result-data-kurir-title">Total Jarak </td>
-            <td>: {}</td>
+            <td>: {data.jarak > 1000 ? <>{(data.jarak/1000).toFixed(2)} km</> : <>{data.jarak.toFixed(2)} m</>}</td>
           </tr>
           <tr>
             <td className="result-data-kurir-title">Estimasi Waktu </td>
@@ -40,12 +40,12 @@ const ResultTable = ({data}) => {
           </tr>
         </thead>
         <tbody>
-          {data.dataLokasi.map((elmt, index) =>
+          {data.jalur.map((elmt, index) =>
             <tr>
               <td>{index+1}</td>
-              <td>{elmt.nama_lokasi}</td>
-              <td>{elmt.longitude}</td>
-              <td>{elmt.latitude}</td>
+              <td>{data.lokasi[elmt].nama_lokasi}</td>
+              <td>{data.lokasi[elmt].longitude}</td>
+              <td>{data.lokasi[elmt].latitude}</td>
             </tr>
           )}
         </tbody>

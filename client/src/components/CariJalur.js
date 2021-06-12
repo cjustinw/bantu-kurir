@@ -1,19 +1,24 @@
 import React, {useState, useRef, useEffect} from 'react';
 import '../css/CariJalur.css';
+import { TSP, createMatrix } from './TSP';
 import DeliveryLogo from '../images/delivery.svg';
 import ResultTable from './ResultTable';
 import SearchBox from './SearchBox';
+import Map from './Map'
 
 const CariJalur = () => {
   const [status, setStatus] = useState(false);
-  const [dataLokasi, setDataLokasi] = useState("");
+  const [dataLokasi, setDataLokasi] = useState(null);
   const [found, setFound] = useState(true);
+  const [resultData, setResultData] = useState("");
 
   const resultRef = useRef(null);
   const scrollToResult = () => resultRef.current.scrollIntoView({behavior: 'smooth'});
 
   useEffect(() => {
-    scrollToResult();
+    if(status){
+      scrollToResult();
+    }
   }, [status]);
 
   const submitData = (data) => {
@@ -34,6 +39,19 @@ const CariJalur = () => {
         })
   }
 
+  useEffect(() => {
+    if(dataLokasi != null){
+      let matriks = createMatrix(dataLokasi.dataLokasi);
+      let tsp = TSP(matriks);
+      setResultData({
+        kurir: dataLokasi.dataKurir,
+        lokasi: dataLokasi.dataLokasi,
+        jalur: tsp.path,
+        jarak: tsp.cost
+      });
+    }
+  }, [dataLokasi]);
+
   return (
     <div className="CariJalur"> 
       <SearchBox submitData={submitData} />
@@ -41,11 +59,15 @@ const CariJalur = () => {
       <div className="result" ref={resultRef}>
         {status ? 
         found ?
-            <ResultTable data={dataLokasi}/> 
+            <>
+              <ResultTable data={resultData}/> 
+              <Map />
+            </>
             : 
             <h1 className="not-found">Data tidak ditemukan</h1> 
             :''}
       </div>
+      
     </div>
   )
 }
