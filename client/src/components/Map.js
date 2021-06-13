@@ -14,7 +14,7 @@ const Map = ({data}) => {
       center: [data.lokasi[0].longitude, data.lokasi[0].latitude],
       zoom: 15
     });
-    data.jalur.map((elmt) => {
+    data.jalur.forEach((elmt) => {
       let marker = new tt.Marker().setLngLat([data.lokasi[elmt].longitude, data.lokasi[elmt].latitude]).addTo(mapData);
       let popupOffsets = {
         top: [0, 0],
@@ -28,8 +28,8 @@ const Map = ({data}) => {
       marker.setPopup(popup).togglePopup();
       });
       mapData.on('load', () => {
-        data.jalur.map((elmt, index) => {
-          data.jalur.map((elmt2, index2) => {
+        data.jalur.forEach((elmt, index) => {
+          data.jalur.forEach((elmt2, index2) => {
             mapData.addLayer({
               'id' : index + "" + index2,
               'type' : 'line',
@@ -54,7 +54,7 @@ const Map = ({data}) => {
       });
     });
     if(status){
-      data.jalur.map((elmt, index) => {
+      data.jalur.forEach((elmt, index) => {
         if(index !== data.jalur.length-1){
           setTimeout(() => {
             mapData.addLayer({
