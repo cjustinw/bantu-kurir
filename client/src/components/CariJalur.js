@@ -9,7 +9,7 @@ import Map from './Map'
 const CariJalur = () => {
   const [status, setStatus] = useState(false);
   const [dataLokasi, setDataLokasi] = useState(null);
-  const [found, setFound] = useState(true);
+  const [found, setFound] = useState(null);
   const [resultData, setResultData] = useState("");
 
   const resultRef = useRef(null);
@@ -32,8 +32,10 @@ const CariJalur = () => {
           if(result.dataLokasi.length !== 0){
             setDataLokasi({dataKurir: result.dataKurir[0], dataLokasi: result.dataLokasi});
             setStatus(true);
+            setFound(true);
           }
           else{
+            setStatus(true);
             setFound(false);
           }
         })
@@ -61,13 +63,12 @@ const CariJalur = () => {
         found ?
             <>
               <ResultTable data={resultData}/> 
-              <Map />
+              <Map data={resultData}/>
             </>
             : 
             <h1 className="not-found">Data tidak ditemukan</h1> 
             :''}
       </div>
-      
     </div>
   )
 }

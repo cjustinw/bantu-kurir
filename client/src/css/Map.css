@@ -6,3 +6,20 @@
   border-radius: 30px;
   box-shadow: 6px 19px 23px 1px rgb(0 0 0 / 15%);
 }
+
+.click-map {
+  margin: 1rem;
+  align-self: center;
+  width: 300px;
+  height: 35px;
+  border: none;
+  border-radius: 30px;
+  color: rgb(216, 216, 216);
+  background-color: rgb(61, 61, 61);
+  box-shadow: 6px 19px 23px 1px rgb(0 0 0 / 15%);
+  cursor: pointer;
+}
+
+.click-map:hover {
+  transform: scale(1.1);
+}
