@@ -17,6 +17,7 @@ app.post("/input", async(req,res) => {
       "SELECT * FROM data_kurir WHERE nama = $1 and tanggal = $2;",
       [dataKurir.kurir, dataKurir.tanggal]
     );
+    
     let stat = true;
     for(let i = 0; i < dataLokasi.length-1; i++) {
       for(let j = i+1; j < dataLokasi.length; j++){
@@ -25,6 +26,9 @@ app.post("/input", async(req,res) => {
         }
       }
     }
+    console.log(dataKurir);
+    console.log(dataLokasi);
+    console.log(stat);
     if(resultKurir.rows.length === 0 && stat){
       await pool.query(
         "INSERT INTO data_kurir VALUES ($1, $2, $3);",
