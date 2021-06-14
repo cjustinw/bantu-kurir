@@ -10,7 +10,7 @@ const Home = () => {
     <div className="Home">
       <div className="Home-title">
         <h1><FaBox/> BantuKurir.id</h1>
-        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum interdum odio ut arcu placerat gravida at id sapien. </p>
+        <p>Aplikasi mampu menampilkan jalur ter-efektif untuk melakukan pengiriman ke semua lokasi yang dimasukkan, dengan lokasi asal merupakan Perusahaan dan akhirnya kembali ke lokasi asal.</p>
         <Link to="/input"><button>Masukkan Lokasi <div className="Arrow-logo"><IoMdArrowRoundForward/></div></button></Link>
       </div>
       <img src={CourierLogo} alt="Courier-Logo" />
