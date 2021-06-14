@@ -25,4 +25,4 @@ Konfigurasi database lokal :
 - edit file .env
 
 ## Tentang
-Christopher Justine William 13519005
+Christopher Justine William 13519006
